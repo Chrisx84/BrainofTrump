@@ -13,6 +13,8 @@
             else if (Country == "Mexico")
             {
                 Console.WriteLine("Mexico I don't know much about so affective immediately I will deport anyone from Mexico");
+                int deportationCount = args.Length > 1 ? int.Parse(args[1]) : 25;
+                DeportMexicans(deportationCount);
             }
             else if (Country == "USA")
             {
@@ -30,6 +32,13 @@
             {
                 tariff = tariff + (i * 2);
                 Console.WriteLine($"Tariffing Canada at {tariff.ToString()}%");
+            }
+        }
+        private static void DeportMexicans(int deportationCount)
+        {
+            for (int i = 0; i < deportationCount; i++)
+            {
+                Console.WriteLine($"Deporting Mexican {i} of {deportationCount}");
             }
         }
     }
